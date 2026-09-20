@@ -1,0 +1,38 @@
+/* AI Marketing Campaign Studio: interaction effects (hover, focus, highlight).
+   Loaded after the base styles; uses the same colour tokens, so light and dark modes both work. */
+a,button,select,input,.c,.flow div,nav a,tr td,.t{transition:background-color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s ease,color .16s ease}
+.tr .w{transition:width .4s ease}
+
+/* Sidebar links */
+nav a{border-left:3px solid transparent}
+nav a:hover{background:var(--bg);color:var(--tx)}
+nav a.on{border-left-color:var(--ac)}
+nav a.on:hover{background:var(--ab);color:var(--ac)}
+
+/* Cards: lift and outline on hover; the selected segment stays highlighted */
+.g .c:hover{border-color:var(--ac);box-shadow:0 6px 16px rgba(53,87,214,.15);transform:translateY(-2px)}
+.c.sel,.g .c.sel:hover{outline:none;border-color:var(--ac);box-shadow:0 0 0 2px var(--ac),0 6px 16px rgba(53,87,214,.15)}
+.c.k:hover{box-shadow:inset 0 3px 0 var(--ac),0 6px 16px rgba(53,87,214,.15)}
+
+/* Buttons */
+.b:hover{border-color:var(--ac);color:var(--ac);background:var(--ab)}
+.b.p:hover{background:var(--ac);color:#fff;filter:brightness(1.12)}
+.b:active{transform:translateY(1px)}
+
+/* Workflow strip on the overview */
+.flow div:hover{background:var(--ac);color:#fff;transform:translateY(-1px)}
+
+/* Form fields */
+select:hover,input:hover{border-color:var(--ac)}
+select:focus,input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 3px var(--ab)}
+.b:focus-visible,nav a:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+
+/* Tables: row highlight, and the winning campaign column */
+table tr:hover td{background:var(--ab)}
+td.win{background:var(--ab);color:var(--ok);font-weight:600}
+
+/* Simulation and demo banners stand out */
+.bn{border-left:4px solid var(--wa)}
+.t:hover{filter:brightness(.95)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.g .c:hover,.flow div:hover{transform:none}}
